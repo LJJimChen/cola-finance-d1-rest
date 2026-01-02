@@ -1,0 +1,27 @@
+/**
+ * For more details on how to configure Wrangler, refer to:
+ * https://developers.cloudflare.com/workers/wrangler/configuration/
+ */
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "cola-finance-d1-rest",
+	"main": "src/index.ts",
+	"compatibility_date": "2025-03-03",
+    "d1_databases": [
+        {
+          "binding": "DB",
+          "database_name": "cola-finance",
+          "database_id": "5f279397-ff24-4793-835c-ddfbe3bb49dc"
+        }
+    ],
+    "secrets_store_secrets": [
+        {
+            "store_id": "acae0045bb97453390ccf52a65abde49",
+            "binding": "SECRET",
+            "secret_name": "cola-finance-secret"
+        }
+    ],
+	"observability": {
+		"enabled": true
+	}
+}
